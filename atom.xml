@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-10T11:49:25.000Z</updated>
+  <updated>2017-08-10T11:52:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://yoursite.com/2017/08/10/H/"/>
     <id>http://yoursite.com/2017/08/10/H/</id>
     <published>2017-08-10T07:56:07.000Z</published>
-    <updated>2017-08-10T11:49:25.000Z</updated>
+    <updated>2017-08-10T11:52:45.000Z</updated>
     
-    <content type="html"><![CDATA[<p>#It’s a try of Markdown</p>
+    <content type="html"><![CDATA[<p>hello world~</p>
+<p>#It’s a try of Markdown</p>
 <p>##what is Markdown<br>很遗憾，我只是为了试一下Hexo了解了一下这个东西</p>
 <ul>
 <li>还是？</li>
@@ -41,19 +42,16 @@
     
     <summary type="html">
     
-      &lt;p&gt;#It’s a try of Markdown&lt;/p&gt;
+      &lt;p&gt;hello world~&lt;/p&gt;
+&lt;p&gt;#It’s a try of Markdown&lt;/p&gt;
 &lt;p&gt;##what is Markdown&lt;br&gt;很遗憾，我只是为了试一下Hexo了解了一下这个东西&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;还是？&lt;/li&gt;
 &lt;li&gt;what？&lt;/li&gt;
-&lt;li&gt;Okay&lt;/li&gt;
-&lt;/ul&gt;
 &lt;
     
     </summary>
     
-    
-      <category term="life" scheme="http://yoursite.com/tags/life/"/>
     
   </entry>
   
