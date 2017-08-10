@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-10T11:53:49.000Z</updated>
+  <updated>2017-08-10T11:54:38.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,10 @@
     <link href="http://yoursite.com/2017/08/10/H/"/>
     <id>http://yoursite.com/2017/08/10/H/</id>
     <published>2017-08-10T07:56:07.000Z</published>
-    <updated>2017-08-10T11:53:49.000Z</updated>
+    <updated>2017-08-10T11:54:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>hello world~</p>
-<p>#It’s a try of Markdown</p>
-<p>##what is Markdown<br>很遗憾，我只是为了试一下Hexo了解了一下这个东西</p>
+<h1 id="It’s-a-try-of-Markdown"><a href="#It’s-a-try-of-Markdown" class="headerlink" title="It’s a try of Markdown"></a>It’s a try of Markdown</h1><h2 id="what-is-Markdown"><a href="#what-is-Markdown" class="headerlink" title="what is Markdown"></a>what is Markdown</h2><p>很遗憾，我只是为了试一下Hexo了解了一下这个东西</p>
 <ul>
 <li>还是？</li>
 <li>what？</li>
@@ -35,20 +34,14 @@
 </blockquote>
 <p><a href="https://kimnoic.github.io" target="_blank" rel="external">可以点这里</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">int main()&#123;</div><div class="line">	cout&lt;&lt;&quot;Winter is coming&quot;;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>##WTF?</p>
-<p>不对，我好像还在实习呀= =</p>
+<h2 id="WTF"><a href="#WTF" class="headerlink" title="WTF?"></a>WTF?</h2><p>不对，我好像还在实习呀= =</p>
 <p>溜了溜了</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;hello world~&lt;/p&gt;
-&lt;p&gt;#It’s a try of Markdown&lt;/p&gt;
-&lt;p&gt;##what is Markdown&lt;br&gt;很遗憾，我只是为了试一下Hexo了解了一下这个东西&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;还是？&lt;/li&gt;
-&lt;li&gt;what？&lt;/li&gt;
-&lt;
+&lt;h1 id=&quot;It’s-a-try-of-Markdown&quot;&gt;&lt;a href=&quot;#It’s-a-try-of-Markdown&quot; class=&quot;headerlink&quot; title=&quot;It’s a try of Markdown&quot;&gt;&lt;/a&gt;
     
     </summary>
     
