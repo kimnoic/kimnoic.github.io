@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -136,7 +136,7 @@
 
 
 
-  <title>kimnoic's home</title>
+  <title>kimnoic's home</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -155,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left 
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
@@ -241,6 +241,134 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/16/LSTM入门学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimnoic">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimnoic's home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/16/LSTM入门学习/" itemprop="url">LSTM入门学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-16T17:22:13+08:00">
+                2017-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1><h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><p>RNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活st-1作为输入。</p>
+<h2 id="LSTM结构图"><a href="#LSTM结构图" class="headerlink" title="LSTM结构图"></a>LSTM结构图</h2><p><img src="/2017/08/16/LSTM入门学习/1.png" alt="lstm"></p>
+<h2 id="LSTM核心思想"><a href="#LSTM核心思想" class="headerlink" title="LSTM核心思想"></a>LSTM核心思想</h2><p>关键在于细胞状态，水平线在图上方贯穿运行，只有少量线性交互。LSTM拥有三个门，来保护和控制细胞状态。</p>
+<h2 id="对LSTM的理解"><a href="#对LSTM的理解" class="headerlink" title="对LSTM的理解"></a>对LSTM的理解</h2><h3 id="忘记门层"><a href="#忘记门层" class="headerlink" title="忘记门层"></a>忘记门层</h3><p>决定我们会从细胞状态中丢弃什么信息，该门会读取\(h_{t-1}\)和\(x_t\)，输出一个在0到1的数值给每个细胞状态\(c_{t-1}\)中的数字。回到语言模型的例子来基于已经看到的预测下一个词，可能包含当前主语的性别，因此正确的带刺可以被选择出来。<br><img src="/2017/08/16/LSTM入门学习/2.png" alt="lstm"><br>$$f_{t}=\sigma\left(W_{f}\bullet[h_{t-1},x_{t}]+b_{f}\right)$$</p>
+<h3 id="输入门层"><a href="#输入门层" class="headerlink" title="输入门层"></a>输入门层</h3><p>sigmoid层成“输入层”决定什么值我们将要更新，然后一个tanh层创建一个新的候选值向量，\(\tilde{C}_{t}\)会被加入到状态。<br><img src="/2017/08/16/LSTM入门学习/3.png" alt="lstm"><br>$$i_{t}=\sigma\left(W_{i}\bullet[h_{t-1},x_{t}]+b_{i}\right)$$<br>$$\tilde{C}_{t}=tanh\left(W_{C}\bullet[h_{t-1},x_{t}]+b_{C}\right)$$</p>
+<h2 id="LSTM前向传导"><a href="#LSTM前向传导" class="headerlink" title="LSTM前向传导"></a>LSTM前向传导</h2><p>公式为<br>$$i=\sigma\left( x_{t}U^i+S_{T-1}W^i \right)$$<br>$$f=\sigma\left(x_{t}U^f+s_{t-1}W^f\right)$$<br>$$o=\sigma\left(x|<em>{t}U^o+s\</em>{t-1}W^f\right)$$<br>$$g=tanh\left(x_{t}U^g+s_{t-1}W^g\right)$$<br>$$c_{t}=c_{t-1}\circ f+g\circ i$$<br>$$c_{t}=tanh\left(c_{t}\right) \circ o$$<br>$$tanh\left(x\right)=\frac{e^x-e-x}{e^x+e-x}$$</p>
+<p>to be continued…</p>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1060,7 +1188,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1073,7 +1201,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">Tags</span>
               
             </div>
@@ -1232,7 +1360,24 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 

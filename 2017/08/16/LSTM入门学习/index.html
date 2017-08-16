@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="dl," />
+  <meta name="keywords" content="NLP," />
 
 
 
@@ -96,19 +96,21 @@
 
 
 
-<meta name="description" content="CNN在图像平整化完全破坏了它的序列，需要一种方式在没有平整haul的情况下把图片馈送给网络，并且还要保留空间排列特征。  卷积层：在这一层中，我们定义一个权值矩阵，用来从图像中提取一定的特征。 池化层：有时图像太大，我们需要减少训练参数的数量，池化的目的是减少图像的空间大小。池化在每一个纵深维度上独自完成，因此图像的纵深保持不变，常见形式是最大池化。 输出层：卷积和池化只会提取体征，并减少原始图">
-<meta name="keywords" content="dl">
+<meta name="description" content="LSTMRNNRNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活st-1作为输入。 LSTM结构图 LSTM核心思想关键在于细胞状态，水平线在图上方贯穿运行，只有少量线性交互。LSTM拥有三个门，来保护和控制细胞状态。 对">
+<meta name="keywords" content="NLP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CNN">
-<meta property="og:url" content="http://yoursite.com/2017/08/11/CNN-1/index.html">
+<meta property="og:title" content="LSTM入门学习">
+<meta property="og:url" content="http://yoursite.com/2017/08/16/LSTM入门学习/index.html">
 <meta property="og:site_name" content="kimnoic&#39;s home">
-<meta property="og:description" content="CNN在图像平整化完全破坏了它的序列，需要一种方式在没有平整haul的情况下把图片馈送给网络，并且还要保留空间排列特征。  卷积层：在这一层中，我们定义一个权值矩阵，用来从图像中提取一定的特征。 池化层：有时图像太大，我们需要减少训练参数的数量，池化的目的是减少图像的空间大小。池化在每一个纵深维度上独自完成，因此图像的纵深保持不变，常见形式是最大池化。 输出层：卷积和池化只会提取体征，并减少原始图">
-<meta property="og:image" content="http://yoursite.com/2017/08/11/CNN-1/16.jpg">
-<meta property="og:updated_time" content="2017-08-16T08:14:09.000Z">
+<meta property="og:description" content="LSTMRNNRNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活st-1作为输入。 LSTM结构图 LSTM核心思想关键在于细胞状态，水平线在图上方贯穿运行，只有少量线性交互。LSTM拥有三个门，来保护和控制细胞状态。 对">
+<meta property="og:image" content="http://yoursite.com/2017/08/16/LSTM入门学习/1.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/16/LSTM入门学习/2.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/16/LSTM入门学习/3.png">
+<meta property="og:updated_time" content="2017-08-16T16:11:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CNN">
-<meta name="twitter:description" content="CNN在图像平整化完全破坏了它的序列，需要一种方式在没有平整haul的情况下把图片馈送给网络，并且还要保留空间排列特征。  卷积层：在这一层中，我们定义一个权值矩阵，用来从图像中提取一定的特征。 池化层：有时图像太大，我们需要减少训练参数的数量，池化的目的是减少图像的空间大小。池化在每一个纵深维度上独自完成，因此图像的纵深保持不变，常见形式是最大池化。 输出层：卷积和池化只会提取体征，并减少原始图">
-<meta name="twitter:image" content="http://yoursite.com/2017/08/11/CNN-1/16.jpg">
+<meta name="twitter:title" content="LSTM入门学习">
+<meta name="twitter:description" content="LSTMRNNRNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活st-1作为输入。 LSTM结构图 LSTM核心思想关键在于细胞状态，水平线在图上方贯穿运行，只有少量线性交互。LSTM拥有三个门，来保护和控制细胞状态。 对">
+<meta name="twitter:image" content="http://yoursite.com/2017/08/16/LSTM入门学习/1.png">
 
 
 
@@ -137,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/11/CNN-1/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/16/LSTM入门学习/"/>
 
 
 
 
 
-  <title>CNN | kimnoic's home</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>LSTM入门学习 | kimnoic's home</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -260,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/CNN-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/16/LSTM入门学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimnoic">
@@ -277,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CNN</h1>
+          <h1 class="post-title" itemprop="name headline">LSTM入门学习</h1>
         
 
         <div class="post-meta">
@@ -289,8 +291,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T10:49:08+08:00">
-                2017-08-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-16T17:22:13+08:00">
+                2017-08-16
               </time>
             
 
@@ -327,13 +329,15 @@
       
 
       
-        <h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><p>在图像平整化完全破坏了它的序列，需要一种方式在没有平整haul的情况下把图片馈送给网络，并且还要保留空间排列特征。</p>
-<ul>
-<li>卷积层：在这一层中，我们定义一个权值矩阵，用来从图像中提取一定的特征。</li>
-<li>池化层：有时图像太大，我们需要减少训练参数的数量，池化的目的是减少图像的空间大小。池化在每一个纵深维度上独自完成，因此图像的纵深保持不变，常见形式是最大池化。</li>
-<li>输出层：卷积和池化只会提取体征，并减少原始图像带来的参数。输出层具有类似分类交叉熵的损失函数，用于计算预测误差。一旦前向传播完成，反向出阿伯就会开始更新权重和偏差以达到减少误差的目的。</li>
-</ul>
-<p>下面是整个网络的样子<br><img src="/2017/08/11/CNN-1/16.jpg" alt="16"><br>CNN 中的输出层是全连接层，其中来自其他层的输入在这里被平化和发送，以便将输出转换为网络所需的参数。随后输出层会产生输出，这些信息会互相比较排除错误。损失函数是全连接输出层计算的均方根损失。随后我们会计算梯度错误。错误会进行反向传播，以不断改进过滤器（权重）和偏差值。</p>
+        <h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1><h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><p>RNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活st-1作为输入。</p>
+<h2 id="LSTM结构图"><a href="#LSTM结构图" class="headerlink" title="LSTM结构图"></a>LSTM结构图</h2><p><img src="/2017/08/16/LSTM入门学习/1.png" alt="lstm"></p>
+<h2 id="LSTM核心思想"><a href="#LSTM核心思想" class="headerlink" title="LSTM核心思想"></a>LSTM核心思想</h2><p>关键在于细胞状态，水平线在图上方贯穿运行，只有少量线性交互。LSTM拥有三个门，来保护和控制细胞状态。</p>
+<h2 id="对LSTM的理解"><a href="#对LSTM的理解" class="headerlink" title="对LSTM的理解"></a>对LSTM的理解</h2><h3 id="忘记门层"><a href="#忘记门层" class="headerlink" title="忘记门层"></a>忘记门层</h3><p>决定我们会从细胞状态中丢弃什么信息，该门会读取\(h_{t-1}\)和\(x_t\)，输出一个在0到1的数值给每个细胞状态\(c_{t-1}\)中的数字。回到语言模型的例子来基于已经看到的预测下一个词，可能包含当前主语的性别，因此正确的带刺可以被选择出来。<br><img src="/2017/08/16/LSTM入门学习/2.png" alt="lstm"><br>$$f_{t}=\sigma\left(W_{f}\bullet[h_{t-1},x_{t}]+b_{f}\right)$$</p>
+<h3 id="输入门层"><a href="#输入门层" class="headerlink" title="输入门层"></a>输入门层</h3><p>sigmoid层成“输入层”决定什么值我们将要更新，然后一个tanh层创建一个新的候选值向量，\(\tilde{C}_{t}\)会被加入到状态。<br><img src="/2017/08/16/LSTM入门学习/3.png" alt="lstm"><br>$$i_{t}=\sigma\left(W_{i}\bullet[h_{t-1},x_{t}]+b_{i}\right)$$<br>$$\tilde{C}_{t}=tanh\left(W_{C}\bullet[h_{t-1},x_{t}]+b_{C}\right)$$</p>
+<h2 id="LSTM前向传导"><a href="#LSTM前向传导" class="headerlink" title="LSTM前向传导"></a>LSTM前向传导</h2><p>公式为<br>$$i=\sigma\left( x_{t}U^i+S_{T-1}W^i \right)$$<br>$$f=\sigma\left(x_{t}U^f+s_{t-1}W^f\right)$$<br>$$o=\sigma\left(x|<em>{t}U^o+s\</em>{t-1}W^f\right)$$<br>$$g=tanh\left(x_{t}U^g+s_{t-1}W^g\right)$$<br>$$c_{t}=c_{t-1}\circ f+g\circ i$$<br>$$c_{t}=tanh\left(c_{t}\right) \circ o$$<br>$$tanh\left(x\right)=\frac{e^x-e-x}{e^x+e-x}$$</p>
+<p>to be continued…</p>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
       
     </div>
@@ -351,7 +355,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/dl/" rel="tag"># dl</a>
+            <a href="/tags/NLP/" rel="tag"># NLP</a>
           
         </div>
       
@@ -364,8 +368,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/11/some-skills-to-train-1/" rel="next" title="some skills to train">
-                <i class="fa fa-chevron-left"></i> some skills to train
+              <a href="/2017/08/11/多层感知机/" rel="next" title="多层感知机">
+                <i class="fa fa-chevron-left"></i> 多层感知机
               </a>
             
           </div>
@@ -373,10 +377,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/11/多层感知机/" rel="prev" title="多层感知机">
-                多层感知机 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -508,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CNN"><span class="nav-number">1.</span> <span class="nav-text">CNN</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LSTM"><span class="nav-number">1.</span> <span class="nav-text">LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-number">1.1.</span> <span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM结构图"><span class="nav-number">1.2.</span> <span class="nav-text">LSTM结构图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM核心思想"><span class="nav-number">1.3.</span> <span class="nav-text">LSTM核心思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对LSTM的理解"><span class="nav-number">1.4.</span> <span class="nav-text">对LSTM的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记门层"><span class="nav-number">1.4.1.</span> <span class="nav-text">忘记门层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入门层"><span class="nav-number">1.4.2.</span> <span class="nav-text">输入门层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM前向传导"><span class="nav-number">1.5.</span> <span class="nav-text">LSTM前向传导</span></a></li></ol></li></ol></div>
             
 
           </div>
