@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="dl," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="kimnoic's home" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一些深度学习的训练技巧Batch Normalization深度网络学习过程本质就是为了学习数据分布，网络在每次迭代都是去学习适应不同的分布，这样将会大大降低网络的训练速度。前面基层的输入数据的分布放生改变，那么后面基层就会被累计放大下去。BN就是为了解决训练过程中，中间层数据分布发生变化的情况。简单的做法就是在每一层输入的时候，插入一个归一化层，然后再进入网络的下一层。  E(x)指每一批训练数">
+<meta name="keywords" content="dl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="some skills to train">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/some-skills-to-train-1/index.html">
+<meta property="og:site_name" content="kimnoic&#39;s home">
+<meta property="og:description" content="一些深度学习的训练技巧Batch Normalization深度网络学习过程本质就是为了学习数据分布，网络在每次迭代都是去学习适应不同的分布，这样将会大大降低网络的训练速度。前面基层的输入数据的分布放生改变，那么后面基层就会被累计放大下去。BN就是为了解决训练过程中，中间层数据分布发生变化的情况。简单的做法就是在每一层输入的时候，插入一个归一化层，然后再进入网络的下一层。  E(x)指每一批训练数">
+<meta property="og:image" content="http://yoursite.com/2017/08/11/some-skills-to-train-1/20160312181715397.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/11/some-skills-to-train-1/20160312190113493.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/11/some-skills-to-train-1/13.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/11/some-skills-to-train-1/14.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/11/some-skills-to-train-1/15.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/08/11/some-skills-to-train-1/equation.png">
+<meta property="og:updated_time" content="2017-08-16T08:36:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="some skills to train">
+<meta name="twitter:description" content="一些深度学习的训练技巧Batch Normalization深度网络学习过程本质就是为了学习数据分布，网络在每次迭代都是去学习适应不同的分布，这样将会大大降低网络的训练速度。前面基层的输入数据的分布放生改变，那么后面基层就会被累计放大下去。BN就是为了解决训练过程中，中间层数据分布发生变化的情况。简单的做法就是在每一层输入的时候，插入一个归一化层，然后再进入网络的下一层。  E(x)指每一批训练数">
+<meta name="twitter:image" content="http://yoursite.com/2017/08/11/some-skills-to-train-1/20160312181715397.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/11/some-skills-to-train-1/"/>
+
+
+
+
+
+  <title>some skills to train | kimnoic's home</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kimnoic's home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/some-skills-to-train-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimnoic">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kimnoic's home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">some skills to train</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T08:27:33+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一些深度学习的训练技巧"><a href="#一些深度学习的训练技巧" class="headerlink" title="一些深度学习的训练技巧"></a>一些深度学习的训练技巧</h1><h2 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h2><p>深度网络学习过程本质就是为了学习数据分布，网络在每次迭代都是去学习适应不同的分布，这样将会大大降低网络的训练速度。前面基层的输入数据的分布放生改变，那么后面基层就会被累计放大下去。BN就是为了解决训练过程中，中间层数据分布发生变化的情况。简单的做法就是在每一层输入的时候，插入一个归一化层，然后再进入网络的下一层。</p>
+<p><img src="/2017/08/11/some-skills-to-train-1/20160312181715397.png" alt="d"></p>
+<p>E(x)指每一批训练数据神经元xk的平均值，分母是每一批数据神经元xk激活度的一个标准差。<br>可是随意变换网络的结构会造成其他层学习到的特征分布被搞坏了，<br>利用这个公式，可以学习到其他层的特征分布。</p>
+<p><img src="/2017/08/11/some-skills-to-train-1/20160312190113493.png" alt="d"><br><img src="/2017/08/11/some-skills-to-train-1/13.png" alt="d"><br><img src="/2017/08/11/some-skills-to-train-1/14.png" alt="d"><br>在CNN中，我们可以把每个特征图看成是一个特征处理，就是求取所有样本所对应的一个特征图的所有神经元的平均值、方差，然后对这个神经元做归一化。</p>
+<h2 id="Deep-Residual-Network"><a href="#Deep-Residual-Network" class="headerlink" title="Deep Residual Network"></a>Deep Residual Network</h2><p>深度学习网络并非是deeper and better，残差网络是一个用来训练非常深的深度网络又十分简洁的框架。在神经网络中，需要反向传播来对网络的权重进行调整，但网络很深的时候就会造成每层损失函数求偏导连乘造成精度很小出现误差。<br><img src="/2017/08/11/some-skills-to-train-1/15.jpg" alt="d"><br>通过求偏导数能看到<br><img src="/2017/08/11/some-skills-to-train-1/equation.png" alt="d"><br>这样就算深度很深，梯度也不会消失。换一个角度看，这也是一种把高阶特征和低阶特征再做融合，从而得到更好的效果。</p>
+<h2 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h2><p>说实话，没有读论文，感觉这个东西非常玄学。<br>dropout并不依对代价函数的修改，而是在弃权中改变网络自身。Dropout会临时消除网络中一半的隐藏层神经元，同时让输入层和输出层的神经元保持不变。<br>在前向传播的时候，输入通过修改后的网络，然后反向传播结果。同样通过这个修改后的网络，选择一个新的随机的隐藏神经元的自己进行删除，估计对一个不同的小批量数据的梯度，然后更新权重和偏置。<br>弃掉不同的神经元集合时，像是在训练不同的网络，最后形成的实质就是由若干个子网络组成的新网络。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dl/" rel="tag"># dl</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/10/3-4-of-my-university/" rel="next" title="3/4 of my university">
+                <i class="fa fa-chevron-left"></i> 3/4 of my university
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/11/CNN-1/" rel="prev" title="CNN">
+                CNN <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kimnoic" />
+          <p class="site-author-name" itemprop="name">kimnoic</p>
+           
+              <p class="site-description motion-element" itemprop="description">a lazy boy</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一些深度学习的训练技巧"><span class="nav-number">1.</span> <span class="nav-text">一些深度学习的训练技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Batch-Normalization"><span class="nav-number">1.1.</span> <span class="nav-text">Batch Normalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Residual-Network"><span class="nav-number">1.2.</span> <span class="nav-text">Deep Residual Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout"><span class="nav-number">1.3.</span> <span class="nav-text">Dropout</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kimnoic</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
