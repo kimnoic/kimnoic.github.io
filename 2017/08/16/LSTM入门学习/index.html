@@ -98,20 +98,20 @@
 
 
 
-<meta name="description" content="MathJax.Hub.Config({ tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      LSTMRNNRNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元">
+<meta name="description" content="MathJax.Hub.Config({ tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      LSTMRNNRNN隐藏层神经元计算公式为  $ s_{t} = f\left( x_{t}U+s_{t-1}W \right) $ 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活">
 <meta name="keywords" content="NLP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LSTM入门学习">
 <meta property="og:url" content="http://yoursite.com/2017/08/16/LSTM入门学习/index.html">
 <meta property="og:site_name" content="kimnoic&#39;s home">
-<meta property="og:description" content="MathJax.Hub.Config({ tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      LSTMRNNRNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元">
+<meta property="og:description" content="MathJax.Hub.Config({ tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      LSTMRNNRNN隐藏层神经元计算公式为  $ s_{t} = f\left( x_{t}U+s_{t-1}W \right) $ 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活">
 <meta property="og:image" content="http://yoursite.com/2017/08/16/LSTM入门学习/1.png">
 <meta property="og:image" content="http://yoursite.com/2017/08/16/LSTM入门学习/2.png">
 <meta property="og:image" content="http://yoursite.com/2017/08/16/LSTM入门学习/3.png">
-<meta property="og:updated_time" content="2017-08-17T02:10:07.000Z">
+<meta property="og:updated_time" content="2017-08-17T02:23:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LSTM入门学习">
-<meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      LSTMRNNRNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元">
+<meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      LSTMRNNRNN隐藏层神经元计算公式为  $ s_{t} = f\left( x_{t}U+s_{t-1}W \right) $ 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活">
 <meta name="twitter:image" content="http://yoursite.com/2017/08/16/LSTM入门学习/1.png">
 
 
@@ -340,14 +340,15 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-<h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1><h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><p>RNN隐藏层神经元计算公式为  \( s_{t} = f\left( x_{t}U+s_{t-1}W \right) \) 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活st-1作为输入。</p>
+<h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1><h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><p>RNN隐藏层神经元计算公式为  $ s_{t} = f\left( x_{t}U+s_{t-1}W \right) $ 其中U、W是网络的参数，f表示激活函数。RNN隐层神经元的计算由t时刻输入xt，t-1时刻隐层神经元激活st-1作为输入。</p>
 <h2 id="LSTM结构图"><a href="#LSTM结构图" class="headerlink" title="LSTM结构图"></a>LSTM结构图</h2><p><img src="/2017/08/16/LSTM入门学习/1.png" alt="lstm"></p>
 <h2 id="LSTM核心思想"><a href="#LSTM核心思想" class="headerlink" title="LSTM核心思想"></a>LSTM核心思想</h2><p>关键在于细胞状态，水平线在图上方贯穿运行，只有少量线性交互。LSTM拥有三个门，来保护和控制细胞状态。</p>
 <h2 id="对LSTM的理解"><a href="#对LSTM的理解" class="headerlink" title="对LSTM的理解"></a>对LSTM的理解</h2><p>决定我们会从细胞状态中丢弃什么信息，该门会读取\(h_{t-1}\)和\(x_t\)，输出一个在0到1的数值给每个细胞状态\(c_{t-1}\)中的数字。回到语言模型的例子来基于已经看到的预测下一个词，可能包含当前主语的性别，因此正确的带刺可以被选择出来。</p>
 <h3 id="忘记门层"><a href="#忘记门层" class="headerlink" title="忘记门层"></a>忘记门层</h3><p><img src="/2017/08/16/LSTM入门学习/2.png" alt="lstm"><br>$$f_{t}=\sigma\left(W_{f}\bullet[h_{t-1},x_{t}]+b_{f}\right)$$</p>
 <p>sigmoid层成“输入层”决定什么值我们将要更新，然后一个tanh层创建一个新的候选值向量，\(\tilde{C}_{t}\)会被加入到状态。</p>
 <h3 id="输入门层"><a href="#输入门层" class="headerlink" title="输入门层"></a>输入门层</h3><p><img src="/2017/08/16/LSTM入门学习/3.png" alt="lstm"><br>$$i_{t}=\sigma\left(W_{i}\bullet[h_{t-1},x_{t}]+b_{i}\right)$$<br>$$\tilde{C}_{t}=tanh\left(W_{C}\bullet[h_{t-1},x_{t}]+b_{C}\right)$$</p>
-<h2 id="LSTM前向传导"><a href="#LSTM前向传导" class="headerlink" title="LSTM前向传导"></a>LSTM前向传导</h2><p>公式为<br>$$i=\sigma\left( x_{t}U^i+S_{T-1}W^i \right)$$<br>$$f=\sigma\left(x_{t}U^f+s_{t-1}W^f\right)$$<br>$$o=\sigma\left(x|<em>{t}U^o+s\</em>{t-1}W^f\right)$$<br>$$g=tanh\left(x_{t}U^g+s_{t-1}W^g\right)$$<br>$$c_{t}=c_{t-1}\circ f+g\circ i$$<br>$$c_{t}=tanh\left(c_{t}\right) \circ o$$<br>$$tanh\left(x\right)=\frac{e^x-e-x}{e^x+e-x}$$</p>
+<h2 id="LSTM前向传导"><a href="#LSTM前向传导" class="headerlink" title="LSTM前向传导"></a>LSTM前向传导</h2><p>公式为</p>
+<p>$i=\sigma\left( x_{t}U^i+S_{T-1}W^i \right)$<br>$f=\sigma\left(x_{t}U^f+s_{t-1}W^f\right)$<br>$o=\sigma\left(x|<em>{t}U^o+s\</em>{t-1}W^f\right)$<br>$g=tanh\left(x_{t}U^g+s_{t-1}W^g\right)$<br>$c_{t}=c_{t-1}\circ f+g\circ i$<br>$c_{t}=tanh\left(c_{t}\right) \circ o$<br>$tanh\left(x\right)=\frac{e^x-e-x}{e^x+e-x}$</p>
 <p>to be continued…</p>
 
       
