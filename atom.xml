@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-19T00:54:35.000Z</updated>
+  <updated>2017-09-19T01:12:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,14 +20,34 @@
     <link href="http://yoursite.com/2017/09/19/to-do-list/"/>
     <id>http://yoursite.com/2017/09/19/to-do-list/</id>
     <published>2017-09-19T00:47:04.000Z</published>
-    <updated>2017-09-19T00:54:35.000Z</updated>
+    <updated>2017-09-19T01:12:46.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="It’s-time-to-do-some-change"><a href="#It’s-time-to-do-some-change" class="headerlink" title="It’s time to do some change."></a>It’s time to do some change.</h1><p>#To do list</p>
-<h2 id="CS224"><a href="#CS224" class="headerlink" title="CS224"></a>CS224</h2><h3 id="to-do-Lecture-one-suggested-readings-and-python-tutorial"><a href="#to-do-Lecture-one-suggested-readings-and-python-tutorial" class="headerlink" title="to do : Lecture one suggested readings and python tutorial"></a>to do : Lecture one suggested readings and python tutorial</h3><h3 id="done-Lecture-one-vedio"><a href="#done-Lecture-one-vedio" class="headerlink" title="done : Lecture one vedio"></a>done : Lecture one vedio</h3><h2 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h2><h3 id="to-do-chapter-one"><a href="#to-do-chapter-one" class="headerlink" title="to do : chapter one"></a>to do : chapter one</h3><h3 id="done-47-775"><a href="#done-47-775" class="headerlink" title="done : [47/775]"></a>done : [47/775]</h3><h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><h3 id="to-do-SVM"><a href="#to-do-SVM" class="headerlink" title="to do : SVM"></a>to do : SVM</h3><h3 id="done-128-382"><a href="#done-128-382" class="headerlink" title="done : [128/382]"></a>done : [128/382]</h3><h1 id="Done-list"><a href="#Done-list" class="headerlink" title="Done list"></a>Done list</h1><h2 id="Sorry-Nothing"><a href="#Sorry-Nothing" class="headerlink" title="Sorry , Nothing"></a>Sorry , Nothing</h2>]]></content>
+    <content type="html"><![CDATA[<hr>
+<h1 id="To-do-list"><a href="#To-do-list" class="headerlink" title="To do list"></a><em>To do list</em></h1><hr>
+<h3 id="CS224"><a href="#CS224" class="headerlink" title="CS224"></a>CS224</h3><ul>
+<li>to do : Lecture one suggested readings and python tutorial</li>
+<li>done : Lecture one vedio</li>
+</ul>
+<h3 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h3><ul>
+<li>to do : chapter one </li>
+<li>done : [47/775]</li>
+</ul>
+<h3 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h3><ul>
+<li>to do : SVM</li>
+<li>done : [128/382]</li>
+</ul>
+<h1 id="Done-list"><a href="#Done-list" class="headerlink" title="Done list"></a><em>Done list</em></h1><ul>
+<li>Sorry , Nothing</li>
+</ul>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<del>Update until 9.19 a.m.</del></p>
+<p><strong><em>Put more on what you good at and put more on what you like.</em></strong></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;It’s-time-to-do-some-change&quot;&gt;&lt;a href=&quot;#It’s-time-to-do-some-change&quot; class=&quot;headerlink&quot; title=&quot;It’s time to do some change.&quot;&gt;&lt;/a&gt;It’s
+      &lt;hr&gt;
+&lt;h1 id=&quot;To-do-list&quot;&gt;&lt;a href=&quot;#To-do-list&quot; class=&quot;headerlink&quot; title=&quot;To do list&quot;&gt;&lt;/a&gt;&lt;em&gt;To do list&lt;/em&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;h3 id=&quot;CS224&quot;&gt;&lt;a href
     
     </summary>
     
