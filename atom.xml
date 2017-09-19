@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-29T02:03:53.000Z</updated>
+  <updated>2017-09-19T00:54:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>to do list</title>
+    <link href="http://yoursite.com/2017/09/19/to-do-list/"/>
+    <id>http://yoursite.com/2017/09/19/to-do-list/</id>
+    <published>2017-09-19T00:47:04.000Z</published>
+    <updated>2017-09-19T00:54:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="It’s-time-to-do-some-change"><a href="#It’s-time-to-do-some-change" class="headerlink" title="It’s time to do some change."></a>It’s time to do some change.</h1><p>#To do list</p>
+<h2 id="CS224"><a href="#CS224" class="headerlink" title="CS224"></a>CS224</h2><h3 id="to-do-Lecture-one-suggested-readings-and-python-tutorial"><a href="#to-do-Lecture-one-suggested-readings-and-python-tutorial" class="headerlink" title="to do : Lecture one suggested readings and python tutorial"></a>to do : Lecture one suggested readings and python tutorial</h3><h3 id="done-Lecture-one-vedio"><a href="#done-Lecture-one-vedio" class="headerlink" title="done : Lecture one vedio"></a>done : Lecture one vedio</h3><h2 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h2><h3 id="to-do-chapter-one"><a href="#to-do-chapter-one" class="headerlink" title="to do : chapter one"></a>to do : chapter one</h3><h3 id="done-47-775"><a href="#done-47-775" class="headerlink" title="done : [47/775]"></a>done : [47/775]</h3><h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><h3 id="to-do-SVM"><a href="#to-do-SVM" class="headerlink" title="to do : SVM"></a>to do : SVM</h3><h3 id="done-128-382"><a href="#done-128-382" class="headerlink" title="done : [128/382]"></a>done : [128/382]</h3><h1 id="Done-list"><a href="#Done-list" class="headerlink" title="Done list"></a>Done list</h1><h2 id="Sorry-Nothing"><a href="#Sorry-Nothing" class="headerlink" title="Sorry , Nothing"></a>Sorry , Nothing</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;It’s-time-to-do-some-change&quot;&gt;&lt;a href=&quot;#It’s-time-to-do-some-change&quot; class=&quot;headerlink&quot; title=&quot;It’s time to do some change.&quot;&gt;&lt;/a&gt;It’s
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>嘻嘻哈哈</title>
+    <link href="http://yoursite.com/2017/09/16/%E5%98%BB%E5%98%BB%E5%93%88%E5%93%88/"/>
+    <id>http://yoursite.com/2017/09/16/嘻嘻哈哈/</id>
+    <published>2017-09-16T02:29:38.000Z</published>
+    <updated>2017-09-17T03:56:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="嘻嘻哈哈"><a href="#嘻嘻哈哈" class="headerlink" title="嘻嘻哈哈"></a>嘻嘻哈哈</h1><p>又到了不定期更新blog的时间了，趁着最近比较轻松(xian)，写点没人看的羞耻blog吧 = =</p>
+<h2 id="保研？出国？工作？"><a href="#保研？出国？工作？" class="headerlink" title="保研？出国？工作？"></a>保研？出国？工作？</h2><p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;其实离做最终决定的deadline还有两天，是不是就说明了我还有还有可以继续考虑。怕是下定了主意了。前几天回家的车上看了一部电影《三个老枪手》，反思自己的人生是不是也是一成不变的，人生的际遇谁又能说的准。说实话，我倾向毕业直接工作的概论都大于出国了。如果不是出去读PHD，美国的诱惑也没有那么大。读PHD的内因又不是自己真的对某个领域特别感兴趣，反而是一些外因起到了作用。别人说的话自己听听可以，决定还是要自己来下。那么先放下自己的幻想吧，姑且先用幻想这个词。人生除了仰望星空，还是要脚踏实地。明明就不是适合读博的人，还去赌博就不会是一个好选择了。</p>
+<h2 id="旅游！"><a href="#旅游！" class="headerlink" title="旅游！"></a>旅游！</h2><p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;其实对12月份的旅行还是很期待的，大学期间没特意出去旅行过，只是随着到处打比赛去过几个地方。准备玩个20天，从某种程度上也算践行了之前出国的打算。下周约了个面签，希望一次就能签过吧，周日晚上再来个三方会议，敲定一下旅行城市和行程。</p>
+<h2 id="实习"><a href="#实习" class="headerlink" title="实习~"></a>实习~</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;嘻嘻哈哈&quot;&gt;&lt;a href=&quot;#嘻嘻哈哈&quot; class=&quot;headerlink&quot; title=&quot;嘻嘻哈哈&quot;&gt;&lt;/a&gt;嘻嘻哈哈&lt;/h1&gt;&lt;p&gt;又到了不定期更新blog的时间了，趁着最近比较轻松(xian)，写点没人看的羞耻blog吧 = =&lt;/p&gt;
+&lt;h2 id=&quot;
+    
+    </summary>
+    
+    
+      <category term="life" scheme="http://yoursite.com/tags/life/"/>
+    
+  </entry>
   
   <entry>
     <title>深度学习调参方法</title>
