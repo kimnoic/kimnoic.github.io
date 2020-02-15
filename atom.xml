@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-27T11:17:15.698Z</updated>
+  <updated>2018-11-20T01:38:59.475Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python tec</title>
+    <link href="http://yoursite.com/2018/11/20/python-tec/"/>
+    <id>http://yoursite.com/2018/11/20/python-tec/</id>
+    <published>2018-11-20T01:36:57.000Z</published>
+    <updated>2018-11-20T01:38:59.475Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h1><h1 id="seaborn"><a href="#seaborn" class="headerlink" title="seaborn"></a>seaborn</h1><p>数据可视化[<a href="https://www.cnblogs.com/kylinlin/p/5236601.html" target="_blank" rel="external">https://www.cnblogs.com/kylinlin/p/5236601.html</a>]</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;yield&quot;&gt;&lt;a href=&quot;#yield&quot; class=&quot;headerlink&quot; title=&quot;yield&quot;&gt;&lt;/a&gt;yield&lt;/h1&gt;&lt;h1 id=&quot;seaborn&quot;&gt;&lt;a href=&quot;#seaborn&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>GameOver</title>
