@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-20T01:38:59.475Z</updated>
+  <updated>2020-02-15T12:27:46.347Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,109 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020阅读记录</title>
+    <link href="http://yoursite.com/2020/02/15/2020%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2020/02/15/2020阅读记录/</id>
+    <published>2020-02-15T12:08:49.000Z</published>
+    <updated>2020-02-15T12:27:46.347Z</updated>
+    
+    <content type="html"><![CDATA[<p>简单做一下今年的阅读计划。</p>
+<ul>
+<li>书籍:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">书名</th>
+<th style="text-align:center">完成情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">《程序员的数学》</td>
+<td style="text-align:center">[171/355]</td>
+</tr>
+<tr>
+<td style="text-align:center">《流畅的Python》</td>
+<td style="text-align:center">[121/599]</td>
+</tr>
+<tr>
+<td style="text-align:center">《时间简史》</td>
+<td style="text-align:center">[67/345]</td>
+</tr>
+<tr>
+<td style="text-align:center">《情商是什么》</td>
+<td style="text-align:center">[266/455]</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>电影：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">电影</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">《美丽人生》</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">《肖申克的救赎》</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">《寄生虫》</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">《小鞋子》</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>舞剧：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">舞剧</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">《永不消逝的电波》</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><del>未完待续<del></del></del></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单做一下今年的阅读计划。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;书籍:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;书名&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;完成情况&lt;/
+    
+    </summary>
+    
+    
+      <category term="Read" scheme="http://yoursite.com/tags/Read/"/>
+    
+  </entry>
   
   <entry>
     <title>python tec</title>
